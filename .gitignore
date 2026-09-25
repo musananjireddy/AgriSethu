@@ -1,0 +1,44 @@
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.venv/
+venv/
+**/.venv/
+**/venv/
+**/*-venv/
+
+# Node
+node_modules/
+dist/
+build/
+.vite/
+
+# Logs
+*.log
+
+# Temporary / backup files
+*_backup*
+*_Backup*
+*.tmp
+*.temp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local development
+*.local
+
+# Generated TTS files
+backend/tts_cache/
+backend/*.mp3
+
+# Local TTS model
+backend/IndicF5/

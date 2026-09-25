@@ -1,0 +1,158 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --green: #1f7a3a;
+  --green-dark: #165c2b;
+  --green-soft: #e8f5e9;
+  --cream: #f7f4ea;
+  --card: #ffffff;
+  --text: #1c2b1f;
+  --muted: #4d5c50;
+  --shadow: 0 8px 24px rgba(31, 122, 58, 0.12);
+  --radius: 20px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.45;
+  font-weight: 400;
+  color: var(--text);
+  background: var(--cream);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top, #eef8e8 0%, var(--cream) 55%);
+}
+
+#root {
+  min-height: 100svh;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img,
+svg {
+  display: block;
+}
+
+/* Crop Health Analysis */
+.analysis-result {
+  width: min(100%, 760px);
+  margin: 24px auto 0;
+  padding: 24px;
+  background: var(--card);
+  border: 1px solid rgba(31, 122, 58, 0.12);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.analysis-result h3 {
+  margin: 0 0 18px;
+  font-size: 1.35rem;
+  color: var(--green-dark);
+}
+
+.analysis-result p {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+.crop-preview {
+  width: min(100%, 760px);
+  margin: 20px auto 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  background: var(--card);
+}
+
+.crop-preview img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+}
+
+.analyze-button {
+  display: block;
+  width: min(100%, 760px);
+  margin: 18px auto 0;
+  padding: 14px 20px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--green);
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.analyze-button:hover:not(:disabled) {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+}
+
+.analyze-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.analysis-text {
+  margin-top: 4px;
+}
+
+.analysis-section-title {
+  margin: 24px 0 12px;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.analysis-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 8px 0;
+  color: var(--text);
+}
+
+.analysis-bullet > span {
+  flex: 0 0 auto;
+  color: var(--green);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.analysis-bullet p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.analysis-paragraph {
+  margin: 8px 0;
+  line-height: 1.7;
+}
+
+.analysis-spacer {
+  height: 4px;
+}
