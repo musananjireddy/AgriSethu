@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+python-multipart
+edge-tts
+torch
+torchvision
+timm
+Pillow
+safetensors
+huggingface-hub
+openai
