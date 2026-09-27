@@ -1,9 +1,12 @@
+--index-url https://download.pytorch.org/whl/cpu
+--extra-index-url https://pypi.org/simple
+
 fastapi
 uvicorn[standard]
 python-multipart
 edge-tts
-torch
-torchvision
+torch==2.10.0+cpu
+torchvision==0.25.0+cpu
 timm
 Pillow
 safetensors
