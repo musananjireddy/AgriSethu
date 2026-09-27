@@ -1,6 +1,6 @@
 export async function getWeather(city) {
   const response = await fetch(
-    `/farm-api/weather?city=${encodeURIComponent(city)}`
+    `https://musananjireddy--agrisethu-farm-api-api.modal.run/weather?city=${encodeURIComponent(city)}`
   )
 
   if (!response.ok) {
@@ -11,8 +11,10 @@ export async function getWeather(city) {
 }
 
 export async function getMarket(commodity, state) {
+  const marketCropMap = { '?????': 'Tomato', '?????': 'Tomato', '??????????': 'Potato', '??????????': 'Maize', '?????': 'Tomato', '???': 'Potato' }
+  commodity = marketCropMap[commodity] || commodity
   const response = await fetch(
-    `/farm-api/market?commodity=${encodeURIComponent(commodity)}&state=${encodeURIComponent(state)}`
+    `https://musananjireddy--agrisethu-farm-api-api.modal.run/market?commodity=${encodeURIComponent(commodity)}&state=${encodeURIComponent(state)}`
   )
 
   if (!response.ok) {
@@ -21,3 +23,4 @@ export async function getMarket(commodity, state) {
 
   return response.json()
 }
+
