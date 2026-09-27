@@ -200,8 +200,24 @@ function App() {
     setFarmDataError('')
 
     try {
-      const data = await getMarket(marketCommodity, marketState)
-      setMarketData(data)
+      const marketQueryCommodity = marketCommodity.includes('??') ? 'Tomato' : marketCommodity.includes('?????') ? 'Potato' : marketCommodity.includes('?????') ? 'Maize' : marketCommodity.includes('??') ? 'Tomato' : marketCommodity.includes('???') ? 'Potato' : marketCommodity; const data = await getMarket(marketQueryCommodity, marketState)
+
+      if (!data || !data.records_found) {
+        setMarketData(null)
+        setFarmDataError('No market price data found for this crop.')
+        return
+      }
+
+      setMarketData({
+        commodity: data.commodity || marketCommodity,
+        state: data.state || marketState,
+        market: data.market || 'N/A',
+        modal_price_average: data.modal_price_average ?? 'N/A',
+        modal_price_min: data.modal_price_min ?? 'N/A',
+        modal_price_max: data.modal_price_max ?? 'N/A',
+        trend: data.trend || 'N/A',
+        latest_arrival_date: data.latest_arrival_date || 'N/A',
+      })
     } catch (error) {
       console.error('Market error:', error)
       setFarmDataError('Unable to load market data.')
@@ -225,7 +241,7 @@ function App() {
     formData.append('language', language)
 
     try {
-      const response = await fetch('http://localhost:8000/api/crop/analyze', {
+      const response = await fetch('https://musananjireddy--agrisethu-crop-ai-api.modal.run/api/crop/analyze', {
         method: 'POST',
         body: formData,
       })
@@ -240,7 +256,8 @@ function App() {
       const cropMatch = analysisText.match(/^(?:Crop|పంట|फसल)\s*:\s*(.+)$/im)
       if (cropMatch) {
         const detectedCrop = cropMatch[1].replace(/\*\*/g, '').trim()
-        setMarketCommodity(detectedCrop)
+        const marketCrop = { '?????': 'Tomato', '?????': 'Tomato' }[detectedCrop] || detectedCrop
+        setMarketCommodity(marketCrop)
       }
 
       setMarketData(null)
@@ -740,6 +757,15 @@ function App() {
 }
 
 export default App
+
+
+
+
+
+
+
+
+
 
 
 
