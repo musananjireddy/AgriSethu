@@ -716,7 +716,7 @@ function App() {
           </div>
           <iframe
             title="Farmer Chatbot"
-            src={`http://127.0.0.1:5000/?lang=${language}`}
+            src={`https://musananjireddy--agrisethu-chatbot-api.modal.run/?lang=${language}`}
             className="chat-frame" allow="microphone"
           />
         </section>
