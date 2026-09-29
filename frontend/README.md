@@ -1,16 +1,30 @@
-# React + Vite
+# AgriSethu
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AgriSethu is a web-based agriculture platform designed to provide farmers with useful agricultural information and AI-powered assistance through a simple, multilingual interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- AI-powered farmer chatbot
+- Crop analysis and agricultural assistance
+- Weather information
+- Agricultural market information
+- Multilingual interface
+- Voice-enabled chatbot support
+- Responsive web interface
 
-## React Compiler
+## System Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+AgriSethu consists of a React-based frontend and separately deployed services for AI-powered functionality.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+AgriSethu Frontend
+       |
+       +---- Crop Analysis Service
+       |
+       +---- Weather Service
+       |
+       +---- Market Information
+       |
+       +---- AI Chatbot Backend
+                    |
+                    +---- Gemini AI
