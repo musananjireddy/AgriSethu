@@ -256,7 +256,7 @@ function App() {
       const cropMatch = analysisText.match(/^(?:Crop|పంట|फसल)\s*:\s*(.+)$/im)
       if (cropMatch) {
         const detectedCrop = cropMatch[1].replace(/\*\*/g, '').trim()
-        const marketCrop = { '?????': 'Tomato', '?????': 'Tomato' }[detectedCrop] || detectedCrop
+        const marketCrop = { '\u0c1f\u0c2e\u0c3e\u0c1f\u0c3e': 'Tomato', '\u0c2c\u0c02\u0c17\u0c3e\u0c33\u0c3e\u0c26\u0c41\u0c02\u0c2a': 'Potato', '\u0c2e\u0c4a\u0c15\u0c4d\u0c15\u0c1c\u0c4a\u0c28\u0c4d\u0c28': 'Corn', '\u0c06\u0c2a\u0c3f\u0c32\u0c4d': 'Apple', '\u0c17\u0c4b\u0c27\u0c41\u0c2e': 'Wheat', '\u091f\u092e\u093e\u091f\u0930': 'Tomato', '\u0906\u0932\u0942': 'Potato', '\u092e\u0915\u094d\u0915\u093e': 'Corn', '\u0938\u0947\u092c': 'Apple', '\u0917\u0947\u0939\u0942\u0902': 'Wheat' }[detectedCrop] || detectedCrop
         setMarketCommodity(marketCrop)
       }
 
@@ -716,7 +716,7 @@ function App() {
           </div>
           <iframe
             title="Farmer Chatbot"
-            src={`https://musananjireddy--agrisethu-chatbot-api.modal.run/?lang=${language}`}
+            src={`https://agri-agent-chatbot-api.vercel.app/?lang=${language}`}
             className="chat-frame" allow="microphone"
           />
         </section>
